@@ -1,8 +1,10 @@
 ﻿@page "/products"
 @page "/products/{Id}"
+@using Microsoft.SemanticKernel
 
 @inject IProductService productService
 @inject IMfService mfService
+@inject Kernel kernel
 
 <div class="product-page-grid">
     <h1 id="store">The Model Store</h1>
@@ -40,6 +42,7 @@
 
     protected override void OnAfterRender(bool firstRender)
     {
+        var test = kernel;
         foo?.Wuff();
         base.OnAfterRender(firstRender);
     }
